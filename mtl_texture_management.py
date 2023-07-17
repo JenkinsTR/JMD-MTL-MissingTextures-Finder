@@ -3,6 +3,14 @@ import re
 import shutil
 import argparse
 
+# ==============================================================================
+# COPYRIGHT INFORMATION
+# ==============================================================================
+#
+# This script is developed by JMDigital (https://jmd.vc) - Version 1.3 (07.2023)
+#
+# ==============================================================================
+
 # Regular expression pattern to match texture lines without extensions
 texture_pattern = r"(?:map_Ka|map_Kd|map_Ks|map_Ns|map_d|map_bump|bump|disp|decal)\s+([^\s]+)"
 

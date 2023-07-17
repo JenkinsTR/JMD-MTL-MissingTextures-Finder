@@ -77,7 +77,11 @@ This script is designed to help with managing textures in MTL files. It provides
         python mtl_texture_management.py -i /path/to/mtl_directory -L
         ```
 
-    Note: Replace `/path/to/mtl_directory` with the actual path to your MTL directory, and `/path/to/output_directory` with the desired output directory path.
+    Note: 
+    - Replace `/path/to/mtl_directory` with the actual path to your MTL directory.
+    - The `MTL_DIR` variable in the batch files is set to the directory where the batch file is launched from. You don't need to modify it.
+    - The `TOOL_DIR` variable in the batch files should be updated with the directory path to where the python script is saved. Modify it accordingly in each batch file.
+    - The `OUTPUT_DIR` variable in the batch files should be updated with the desired output directory path. Modify it accordingly in each batch file.
 
 ## Functionalities
 
@@ -147,7 +151,7 @@ Here are some example scenarios and how to use the script for each:
 
     This will search for missing textures, locate the largest versions, and update the original MTL files with the new texture paths.
 
-4. Finding Missing Textures, Creating Backup Copies, Locating the Largest Versions, Copying Textures and Updating MTL Files:
+4. Finding Missing Textures, Creating Backup Copies, Locating the Largest Versions, Copying Textures, and Updating MTL Files:
 
     Suppose you want to perform all the tasks together - find missing textures, locate the largest versions, and update the MTL files. Additionally, you want to copy the largest textures to a chosen output directory. Run the following command:
 
@@ -167,8 +171,54 @@ Here are some example scenarios and how to use the script for each:
 
     This will search for missing textures, display them, and locate the largest versions of the textures.
 
+6. Using `listmissing.bat`:
+
+    The `listmissing.bat` batch file is provided for your convenience. It performs the task of finding missing textures without extensions in the MTL directory and its subfolders, and saves the information to a file named `missing_textures.txt`. To use it, simply run the following command:
+
+    ```
+    listmissing.bat
+    ```
+
+    Note: Before using the `listmissing.bat` file, ensure that you update the `TOOL_DIR` variable in the batch file with the folder where the python script is saved.
+
+7. Using `copymissing.bat`:
+
+    The `copymissing.bat` batch file is provided for your convenience. It performs the task of copying the textures to a chosen output directory without updating the original MTL files. To use it, simply run the following command:
+
+    ```
+    copymissing.bat
+    ```
+
+    Note: Before using the `copymissing.bat` file, ensure that you update the `TOOL_DIR` variable in the batch file with the folder where the python script is saved and `OUTPUT_DIR` variable in the batch file with your desired output directory path.
+
+8. Using `updatemissing.bat`:
+
+    The `updatemissing.bat` batch file is provided for your convenience. It performs the task of finding missing textures, creating backup copies of the original MTL files, locating the largest versions, and updating the MTL files. To use it, simply run the following command:
+
+    ```
+    updatemissing.bat
+    ```
+
+    Note: Before using the `updatemissing.bat` file, ensure that you update the `TOOL_DIR` variable in the batch file with the folder where the python script is saved.
+
+9. Using `list+copy+update_missing.bat`:
+
+    The `list+copy+update_missing.bat` batch file is provided for your convenience. It performs all the tasks together - finding missing textures, creating backup copies of the original MTL files, locating the largest versions, copying the textures to a chosen output directory, and updating the MTL files. To use it, simply run the following command:
+
+    ```
+    list+copy+update_missing.bat
+    ```
+
+    Note: Before using the `list+copy+update_missing.bat` file, ensure that you update the `TOOL_DIR` variable in the batch file with the folder where the python script is saved and `OUTPUT_DIR` variable in the batch file with your desired output directory path.
+
+
 Feel free to customize and enhance the script to fit your specific requirements.
 
 ## License
 
 This script is provided under the [MIT License](LICENSE).
+
+---
+
+&copy; 2023 JMDigital | Version 1.3  
+Website: [jmd.vc](https://jmd.vc)
