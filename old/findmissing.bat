@@ -1,10 +1,10 @@
-@echo off
+@ECHO OFF
 
 REM Get the directory of the batch file
-SET "WORK_DIR=%~dp0"
-SET "MTL_DIR=W:\GTA\2008 - Grand Theft Auto IV\_GAME\_DECOMPILED"
+SET "TOOL_DIR=K:\GitHub\JMD-MTL-MissingTextures-Finder"
+SET "MTL_DIR=%~dp0"
 
-python "%WORK_DIR%\script.py" "%MTL_DIR%" -s -f "%WORK_DIR%\missing_textures.txt"
+python "%TOOL_DIR%\script.py" "%MTL_DIR%" -s -f "%MTL_DIR%\missing_textures.txt"
 
 PAUSE
 EXIT
