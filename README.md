@@ -1,8 +1,8 @@
 # MTL Texture Management Script
 
-![GitHub](https://img.shields.io/github/license/Jenkins87/JMD-MTL-MissingTextures-Finder)
-![GitHub last commit](https://img.shields.io/github/last-commit/Jenkins87/JMD-MTL-MissingTextures-Finder)
-![GitHub stars](https://img.shields.io/github/stars/Jenkins87/JMD-MTL-MissingTextures-Finder?style=social)
+![GitHub](https://img.shields.io/github/license/JenkinsTR/JMD-MTL-MissingTextures-Finder)
+![GitHub last commit](https://img.shields.io/github/last-commit/JenkinsTR/JMD-MTL-MissingTextures-Finder)
+![GitHub stars](https://img.shields.io/github/stars/JenkinsTR/JMD-MTL-MissingTextures-Finder?style=social)
 
 - [Requirements](#requirements)
 - [Usage](#usage)
