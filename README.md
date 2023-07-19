@@ -1,5 +1,9 @@
 # MTL Texture Management Script
 
+![GitHub](https://img.shields.io/github/license/Jenkins87/JMD-MTL-MissingTextures-Finder)
+![GitHub last commit](https://img.shields.io/github/last-commit/Jenkins87/JMD-MTL-MissingTextures-Finder)
+![GitHub stars](https://img.shields.io/github/stars/Jenkins87/JMD-MTL-MissingTextures-Finder?style=social)
+
 - [Requirements](#requirements)
 - [Usage](#usage)
 - [Functionalities](#functionalities)
@@ -8,10 +12,11 @@
   - [Updating the MTL Files](#updating-the-mtl-files)
   - [Creating Backup Copies](#creating-backup-copies)
   - [Supported Texture Types](#supported-texture-types)
+  - [Fast Mode](#fast-mode)
 - [Examples](#examples)
 - [License](#license)
 
-This script is designed to help with managing textures in MTL files. It provides various functionalities, including finding missing textures, locating the largest versions of the textures, and updating the MTL files with the new texture paths. Additionally, it supports copying the textures to a chosen folder.
+This script is designed to help with managing textures in MTL files. It provides various functionalities, including finding missing textures, locating the largest versions of the textures, and updating MTL files with the new texture paths. Additionally, it supports copying the textures to a chosen folder.
 
 ## Requirements
 
@@ -103,6 +108,8 @@ By default, the script only prints the changes without modifying the files. Use 
 
 The script can create backup copies of the original MTL files before modifying them. If the `-b` option is used, it creates backup copies of the MTL files with the extension '.mtlbkp'. The backup files are saved alongside the original MTL files.
 
+If a `.mtlbkp` file is found for a specific `.mtl` file, the script skips updating that `.mtl` file and moves on to the next one.
+
 ### Supported Texture Types
 
 The script supports the following types of textures that can be defined in the .mtl file:
@@ -116,6 +123,21 @@ The script supports the following types of textures that can be defined in the .
 - bump: Bump texture
 - disp: Displacement texture
 - decal: Decal texture
+
+### Fast Mode
+
+The script provides a fast mode for finding missing textures. The `-fast` option can be used to enable fast mode. In this mode, the script uses a different, faster, more serialized way of updating the MTL files, which can make the process seem faster. It directly updates the MTL files immediately after finding the largest texture for each MTL, instead of waiting until it's finished scanning to update all the MTLs at once.
+
+In fast mode, the following options are implicitly enabled:
+
+- `-u`: Updates the MTL files with the new texture paths by replacing the original texture paths with the paths of the largest versions of the textures. The updated MTL files are saved with the new texture paths.
+ 
+- `-b`: Creates backup copies of the original MTL files before modifying them. It creates backup copies of the MTL files with the extension '.mtlbkp'. The backup files are saved alongside the original MTL files.
+ 
+- `-c`: Copies the textures to a chosen output directory. It locates the largest versions of the textures and copies them to the specified output directory.
+  - In Fast Mode, this will copy the largest textures to a sub folder in the original `.mtl`'s folder that carries the same name as the `.mtl` file. The script will then update each `.mtl` with this new location.
+
+Please note that while fast mode can speed up the process by updating MTL files as it scans, it might not be suitable for all scenarios, especially when dealing with a small number of textures or if you want to just list the missing textures.
 
 ## Examples
 
@@ -220,5 +242,5 @@ This script is provided under the [MIT License](LICENSE).
 
 ---
 
-&copy; 2023 JMDigital | Version 1.3  
+&copy; 2023 JMDigital | Version 1.4  
 Website: [jmd.vc](https://jmd.vc)
